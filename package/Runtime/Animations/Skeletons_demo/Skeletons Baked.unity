@@ -499,11 +499,11 @@ MonoBehaviour:
   Animation: {fileID: 11400000, guid: 06f965f2472bf8a4aa9c1613a9268839, type: 2}
   PreviewMaterial: {fileID: 2100000, guid: a59e475bb3cd3034d96e4560623c2064, type: 2}
   skinQuality: 3
-  Count: {x: 10, y: 10}
+  Count: {x: 5, y: 8}
   Offset: {x: 1, y: 2}
   UseInstancedIndirect: 1
-  InstanceCount: 300
-  VertexCount: 308700
+  InstanceCount: 120
+  VertexCount: 123480
 --- !u!4 &1742493161
 Transform:
   m_ObjectHideFlags: 0
@@ -512,7 +512,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1742493159}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.1, y: 0, z: 0}
+  m_LocalPosition: {x: 2.17, y: 0, z: -12.55}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
