@@ -10,7 +10,8 @@
     "url": "https://needle.tools"
   },
   "dependencies": {
+    "com.unity.mathematics": "1.2.1",
+    "com.unity.burst": "1.4.4"
   },
-  "samples": [
-  ]
+  "samples": []
 }
