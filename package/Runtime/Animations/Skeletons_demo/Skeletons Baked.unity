@@ -499,8 +499,9 @@ MonoBehaviour:
   Animation: {fileID: 11400000, guid: 06f965f2472bf8a4aa9c1613a9268839, type: 2}
   PreviewMaterial: {fileID: 2100000, guid: a59e475bb3cd3034d96e4560623c2064, type: 2}
   skinQuality: 3
+  ClipIndex: 1
   Count: {x: 5, y: 8}
-  Offset: {x: 1, y: 2}
+  Offset: {x: 1.5, y: 2}
   UseInstancedIndirect: 1
   InstanceCount: 120
   VertexCount: 123480
