@@ -460,8 +460,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1688462490}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalRotation: {x: -0.07853332, y: 0.9197485, z: -0.3000006, w: -0.24061374}
+  m_LocalPosition: {x: 11.47886, y: 7.561628, z: 11.344059}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -499,9 +499,9 @@ MonoBehaviour:
   Animation: {fileID: 11400000, guid: 06f965f2472bf8a4aa9c1613a9268839, type: 2}
   PreviewMaterial: {fileID: 2100000, guid: a59e475bb3cd3034d96e4560623c2064, type: 2}
   skinQuality: 3
-  ClipIndex: -1
+  ClipIndex: 1
   Count: {x: 30, y: 30}
-  Offset: {x: 1.5, y: 2}
+  Offset: {x: 1.2, y: 1.5}
   UseInstancedIndirect: 1
   InstanceCount: 2700
   VertexCount: 2778300

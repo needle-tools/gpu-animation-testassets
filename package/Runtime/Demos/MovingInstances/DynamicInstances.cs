@@ -42,7 +42,7 @@ namespace needle.GpuAnimation
 		private static readonly int PositionBuffer = Shader.PropertyToID("_InstanceTransforms");
 		private uint[] args;
 
-		private ComputeBuffer _timeOffsets;
+		private float[] _timeOffsets;
 
 		[Header("Internal")] public int InstanceCount = default;
 		public int VertexCount = 0;
@@ -73,7 +73,7 @@ namespace needle.GpuAnimation
 		{
 			foreach (var data in buffers.Values) data.Dispose();
 			buffers.Clear();
-			_timeOffsets?.Dispose();
+			// _timeOffsets?.Dispose();
 		}
 
 		private bool EnsureBuffers(Object obj, int clipIndex, int clipsCount, out string key)
@@ -122,16 +122,16 @@ namespace needle.GpuAnimation
 				buffers[key] = CreateNewBuffer();
 			}
 
-			if (_timeOffsets == null || !_timeOffsets.IsValid() || _timeOffsets.count != InstanceCount)
+			if (_timeOffsets == null)// || !_timeOffsets.IsValid() || _timeOffsets.count != InstanceCount)
 			{
-				var times = new float[InstanceCount];
-				for (int i = 0; i < times.Length; i++)
+				var times = new float[100];
+				for (var i = 0; i < times.Length; i++)
 				{
 					times[i] = Random.value * 100;
 				}
-
-				_timeOffsets = new ComputeBuffer(times.Length, sizeof(float));
-				_timeOffsets.SetData(times);
+				_timeOffsets = times;
+				// _timeOffsets = new ComputeBuffer(times.Length, sizeof(float));
+				// _timeOffsets.SetData(times);
 			}
 
 			return true;
@@ -179,7 +179,7 @@ namespace needle.GpuAnimation
 				block.SetBuffer(PositionBuffer, data.Buffer);
 			}
 
-			block.SetBuffer(InstanceTimeOffsets, _timeOffsets);
+			block.SetFloatArray(InstanceTimeOffsets, _timeOffsets);
 
 			for (var k = 0; k < mesh.subMeshCount; k++)
 			{
