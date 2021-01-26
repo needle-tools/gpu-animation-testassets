@@ -20,10 +20,10 @@ MonoBehaviour:
   - {fileID: 7400000, guid: 272e84c6ff8fea340b19da71308f0475, type: 3}
   _bakes:
   - Skinning:
-      Texture: {fileID: 0}
+      Texture: {fileID: 2800000, guid: bcf5c9c4b6655664a983c453e5ce210f, type: 2}
       Mesh: {fileID: 4300000, guid: f227b5017a7c0184a96c2c26f1e4408d, type: 3}
     Animations:
-      Texture: {fileID: 0}
+      Texture: {fileID: 2800000, guid: 6f3596363ca09dc4e8058e38e2d814ae, type: 2}
       ClipsInfos:
       - IndexStart: 0
         Length: 1104

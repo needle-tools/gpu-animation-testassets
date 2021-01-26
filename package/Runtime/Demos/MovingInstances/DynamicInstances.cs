@@ -122,16 +122,14 @@ namespace needle.GpuAnimation
 				buffers[key] = CreateNewBuffer();
 			}
 
-			if (_timeOffsets == null)// || !_timeOffsets.IsValid() || _timeOffsets.count != InstanceCount)
+			if (_timeOffsets == null)
 			{
-				var times = new float[100];
+				var times = new float[128];
 				for (var i = 0; i < times.Length; i++)
 				{
 					times[i] = Random.value * 100;
 				}
 				_timeOffsets = times;
-				// _timeOffsets = new ComputeBuffer(times.Length, sizeof(float));
-				// _timeOffsets.SetData(times);
 			}
 
 			return true;
@@ -235,30 +233,36 @@ namespace needle.GpuAnimation
 				var target = data.target;
 				var maxNeighbors = data.maxNeighbors;
 				var separationDist = data.separationDist;
-				var speed = data.speed;
 				var deltaTime = data.deltaTime;
 
 				for (var i = 0; i < matrices.Length; i++)
 				{
 					float4x4 matrix = matrices[i];
-					var position = ((float4) matrix[3]).xyz;
+					var speed = data.speed;
+					var position = matrix[3].xyz;
 					float dist = math.distance(position, target);
 					if (dist < 1) continue;
 					var targetDir = math.normalize(target - position);
 					targetDir.y = 0;
-					var separation = targetDir;
+					var separation = float3.zero;
+					var separationSum = 0f;
 					for (var k = 0; k < maxNeighbors; k++)
 					{
 						if (k >= matrices.Length) continue;
 						var index = random.NextInt(0, matrices.Length);
 						if (index == i) continue;
-						var otherPos = ((float4) matrices[index][3]).xyz;
-						separation += CalcSeparationVec(position, otherPos, separationDist);
+						var otherPos = matrices[index][3].xyz;
+						separation += CalcSeparationVec(position, otherPos, separationDist, out var scaler);
+						if(scaler > 0)
+							separationSum += 1/scaler;
 					}
+
+					speed /= math.max(1, separationSum / maxNeighbors * 2f);//2*math.length(separation));
+					separation += targetDir;
 
 					var forward = math.normalize(separation);
 					position = math.lerp(position, position + forward, deltaTime * speed);
-					var look = quaternion.LookRotation(math.lerp(targetDir, forward, .3f), new float3(0, 1, 0));
+					var look = quaternion.LookRotation(math.lerp(targetDir, forward, deltaTime * speed), new float3(0, 1, 0));
 					var rotation = quaternion.LookRotation(
 						matrix[2].xyz,
 						matrix[1].xyz
@@ -268,11 +272,11 @@ namespace needle.GpuAnimation
 				}
 			}
 
-			private static float3 CalcSeparationVec(float3 self, float3 neighbor, float dist)
+			private static float3 CalcSeparationVec(float3 self, float3 neighbor, float dist, out float scaler)
 			{
 				var diff = self - neighbor; 
 				var diffLen = math.length(diff);
-				var scaler = math.clamp(1.0f - diffLen / dist, 0, 1);
+				scaler = math.clamp(1.0f - diffLen / dist, 0, 1);
 				return diff * (scaler / diffLen);
 			}
 		}
