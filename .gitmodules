@@ -1,0 +1,3 @@
+[submodule "modules/BetterShaders"]
+	path = modules/BetterShaders
+	url = https://github.com/slipster216/BetterShaders
