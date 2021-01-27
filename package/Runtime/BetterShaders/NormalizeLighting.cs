@@ -7,7 +7,7 @@ namespace BetterShaders
 	public class NormalizeLighting : MonoBehaviour
 	{
 #if !HDRP_INSTALLED
-		private Light light;
+		private new Light light;
 		private void Update()
 		{
 			if (!light && !TryGetComponent(out light))
