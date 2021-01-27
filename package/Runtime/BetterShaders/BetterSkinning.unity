@@ -122,37 +122,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!21 &8009221
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: BakedAnimation-Preview
-  m_Shader: {fileID: 4800000, guid: c69b0ce0855244f8947ae5e27b0ea9e6, type: 3}
-  m_ShaderKeywords: SKIN_QUALITY_FOUR
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 1
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - Skin_Quality: 0
-    - _EmissionFactor: 0.2
-    - _Glossiness: 0.2
-    - _Metallic: 0
-    m_Colors:
-    - _Color: {r: 0.4, g: 0.4, b: 0.4, a: 1}
-    - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &177311044
 GameObject:
   m_ObjectHideFlags: 0
@@ -219,7 +188,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &179782744
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -288,7 +257,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 179782743}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 1.32, y: 0, z: -2.34}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -697,7 +666,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Animation: {fileID: 11400000, guid: 8d22fe501234fcf47aba01544891fcab, type: 2}
-  PreviewMaterial: {fileID: 8009221}
+  PreviewMaterial: {fileID: 1587344053}
   skinQuality: 3
   Offset: {x: 0, y: 0, z: -4}
   Clip: -1
@@ -715,6 +684,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!21 &1587344053
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: BakedAnimation-Preview
+  m_Shader: {fileID: 4800000, guid: c69b0ce0855244f8947ae5e27b0ea9e6, type: 3}
+  m_ShaderKeywords: SKIN_QUALITY_FOUR
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 1
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Skin_Quality: 0
+    - _EmissionFactor: 0.2
+    - _Glossiness: 0.2
+    - _Metallic: 0
+    m_Colors:
+    - _Color: {r: 0.4, g: 0.4, b: 0.4, a: 1}
+    - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &2035111233
 GameObject:
   m_ObjectHideFlags: 0
