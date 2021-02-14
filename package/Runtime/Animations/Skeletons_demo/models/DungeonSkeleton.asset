@@ -27,15 +27,15 @@ MonoBehaviour:
       Texture: {fileID: 0}
       ClipsInfos:
       - IndexStart: 0
-        Length: 0
+        Length: 1104
         Frames: 46
         FPS: 30
       - IndexStart: 1104
-        Length: 0
+        Length: 2424
         Frames: 101
         FPS: 30
       - IndexStart: 3528
-        Length: 0
+        Length: 864
         Frames: 36
         FPS: 30
   UpdateImmediately: 1
