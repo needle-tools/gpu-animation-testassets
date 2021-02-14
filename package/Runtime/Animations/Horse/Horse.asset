@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Horse
   m_EditorClassIdentifier: 
   Shader: {fileID: 7200000, guid: 87aefcafb4c744688d7375e5ab83a224, type: 3}
+  BakeMesh: 1
   GameObject: {fileID: 100000, guid: a85d92b72304a79449904f3b49e3d5ea, type: 3}
   Animations:
   - {fileID: 7400000, guid: a748dee4242461842b2f083a18157d1f, type: 3}
@@ -20,10 +21,10 @@ MonoBehaviour:
   - {fileID: 7400000, guid: 739a527acf30e794999333672821df88, type: 3}
   _bakes:
   - Skinning:
-      Texture: {fileID: 2800000, guid: e34ad826ad302f145809211c07457058, type: 2}
+      Texture: {fileID: 0}
       Mesh: {fileID: 4300002, guid: a85d92b72304a79449904f3b49e3d5ea, type: 3}
     Animations:
-      Texture: {fileID: 2800000, guid: f476654517c226b4488e704c98017b44, type: 2}
+      Texture: {fileID: 0}
       ClipsInfos:
       - IndexStart: 0
         Length: 1075
